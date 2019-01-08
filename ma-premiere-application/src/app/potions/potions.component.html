@@ -1,11 +1,11 @@
 
 <div class="grid">
   <div class="row" *ngFor="let myPotion of potionList">
-      <app-potion-resume [potion]="myPotion"></app-potion-resume>
+      <app-potion-resume (showDetails)="showTheDetails()" [potion]="myPotion"></app-potion-resume>
   </div>
 </div>
 
 
 
-<app-potion-detail></app-potion-detail>
+<app-potion-detail [potion]="selectedPotion"></app-potion-detail>
 

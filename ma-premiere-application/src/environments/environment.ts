@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api_url: 'https://e9ce18a4-365c-48a7-97d8-456c72d4100c.mock.pstmn.io/api/potions'
 };
 
 /*

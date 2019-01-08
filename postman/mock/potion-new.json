@@ -1,0 +1,11 @@
+{
+		"id": 5,
+		"name": "Amnésie",
+		"effect": "faire oublier",
+		"ingredients": [
+			{
+				"id": 12,
+				"name": "sangsue"
+			}
+		]
+	}

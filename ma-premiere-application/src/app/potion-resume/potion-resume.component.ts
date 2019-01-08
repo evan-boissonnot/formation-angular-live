@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Potion } from '../models/potion';
+import { PotionsService } from '../services/potions.service';
 
 @Component({
   selector: 'app-potion-resume',
@@ -8,13 +9,18 @@ import { Potion } from '../models/potion';
 })
 export class PotionResumeComponent implements OnInit {
   @Input() potion: Potion;
+  @Output() showDetails = new EventEmitter<Potion>();
 
-  constructor() { }
+  constructor(private _service: PotionsService) { }
 
   ngOnInit() {
   }
 
   showDetail(): void {
-    console.log(this.potion);
+    this.showDetails.emit(this.potion);
+  }
+
+  save(): void {
+    this._service.updateOne(this.potion).subscribe(pot => this.potion = pot);
   }
 }
